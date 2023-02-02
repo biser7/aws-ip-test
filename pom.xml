@@ -48,4 +48,35 @@
 		<finalName>ip-ranges-docker</finalName>
 	</build>
 
+	<profiles>
+		<profile>
+			<id>sonar</id>
+			<properties>
+				<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+				<sonar.organization>biser7</sonar.organization>
+				<sonar.projectKey>biser7_aws-ip-test</sonar.projectKey>
+				<sonar.moduleKey>${project.groupId}:${project.artifactId}</sonar.moduleKey>
+			</properties>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.sonarsource.scanner.maven</groupId>
+						<artifactId>sonar-maven-plugin</artifactId>
+						<version>${sonar.version}</version>
+						<executions>
+							<execution>
+								<phase>verify</phase>
+								<goals>
+									<goal>sonar</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>
