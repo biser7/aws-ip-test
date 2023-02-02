@@ -1,9 +1,0 @@
-name: AWS Regions Pipeline
-on: push
-jobs:
-  build:
-    name: Build project
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
