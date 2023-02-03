@@ -17,7 +17,7 @@ import org.springframework.web.client.RestTemplate;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @ExtendWith(MockitoExtension.class)
-public class RegionServiceTest {
+class RegionServiceTest {
   private RegionService regionService;
   @Mock
   private RestTemplate restTemplate;
@@ -29,7 +29,7 @@ public class RegionServiceTest {
   }
 
   @Test
-  public void whenGetRegionIpAddressesShouldReturnRegionIpAddresses() {
+  void whenGetRegionIpAddressesShouldReturnRegionIpAddresses() {
     final String responseResult =
       "{\n" +
         "    \"syncToken\": \"1668649386\",\n" +
@@ -51,7 +51,7 @@ public class RegionServiceTest {
   }
 
   @Test
-  public void whenGetRegionIpAddressesAWSResponseWithoutPrefixesArrayShouldThrowException() {
+  void whenGetRegionIpAddressesAWSResponseWithoutPrefixesArrayShouldThrowException() {
     final String responseResult =
       "{\n" +
         "    \"syncToken\": \"1668649386\",\n" +
