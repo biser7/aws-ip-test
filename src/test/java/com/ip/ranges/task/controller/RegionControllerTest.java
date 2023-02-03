@@ -19,7 +19,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import com.ip.ranges.task.service.RegionService;
 import com.ip.ranges.task.service.RegionServiceImpl;
 
-public class RegionControllerTest {
+class RegionControllerTest {
   private MockMvc mockMvc;
   private RegionService regionServiceMock;
 
@@ -33,7 +33,7 @@ public class RegionControllerTest {
 
   @ParameterizedTest
   @ValueSource(strings = {"EU", "US", "AP", "CN", "SA", "AF", "CA"})
-  public void whenGetRegionIpAddressesShouldReturnStatusOk(String region) throws Exception {
+  void whenGetRegionIpAddressesShouldReturnStatusOk(String region) throws Exception {
     String euRegionIp = "35.180.0.0/16";
     when(regionServiceMock.getRegionIpAddresses(region)).thenReturn(euRegionIp);
 
@@ -48,7 +48,7 @@ public class RegionControllerTest {
   }
 
   @Test
-  public void whenGetRegionIpAddressesWithNotAllowedRegionShouldReturnNotFoundStatus()
+  void whenGetRegionIpAddressesWithNotAllowedRegionShouldReturnNotFoundStatus()
     throws Exception {
 
     String unAllowedRegion = "eu";
